@@ -1,0 +1,17 @@
+---
+  - include_vars: user.yml
+
+  
+  - name: Create users with home directory
+    user: name={{ item.username }} shell=/bin/bash createhome=yes comment='Created by Ansible'
+    with_items: "{{users}}"
+
+  - name: Sudoers | update sudoers file and validate
+    lineinfile: "dest=/etc/sudoers
+      insertafter=EOF
+      line='{{ item.username }} ALL=(ALL) NOPASSWD: ALL'
+      regexp='^{{ item.username }} .*'
+      state=present"
+    when: '{{ item.use_sudo }} == True'
+    with_items: "{{users}}"
+# tasks file for singh

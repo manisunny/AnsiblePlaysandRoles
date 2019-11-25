@@ -1,0 +1,14 @@
+---
+users:
+
+  - username: user2
+    use_sudo: yes
+    password: Passw0rd
+
+  - username: user4
+    use_sudo: no
+    password: Pune@2019
+
+  - username: user6
+    use_sudo: no
+    password: Pune@2020
