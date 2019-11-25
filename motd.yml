@@ -1,0 +1,18 @@
+---
+ - hosts: all
+   vars:
+           motd_ubuntu: "Welcome Mr.Shahid, You have logged in to ubuntu machine"
+           motd_RHEL: "Welcome Mr.Shahid, You have logged in to RedHat Linux"
+   tasks:
+           - name: configure motd
+             copy:
+                     content: "{{motd_ubuntu}}"
+                     dest: /etc/motd
+             become: yes
+             when: ansible_distribution == "Ubuntu"
+           - name: Configure moth
+             copy:
+                     content: "{{motd_RHEL}}"
+                     dest: /etc/motd
+             become: yes
+             when: ansible_distribution == "RedHat"

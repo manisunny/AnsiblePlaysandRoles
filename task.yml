@@ -1,0 +1,24 @@
+- name: ec2 launcher
+  hosts: localhost
+  connection: local
+  gather_facts: True
+  tasks:
+          - name: launching ec2
+            ec2:
+                    key_name: NewKey
+                    instance_type: t2.micro
+                    key_name: NewKey
+                    image: ami-0d5d9d301c853a04a
+                    region: us-east-2
+                    group: default
+                    count: 1
+                    count_tag:
+                            Name: Demo
+                    vpc_subnet_id: subnet-5802bc14
+                    instance_tags:
+                            Name: Demo
+                    wait: yes
+                    assign_public_ip: yes
+          - ec2_instance_facts:
+                  filters:
+                          availability-zone: us-east-2c

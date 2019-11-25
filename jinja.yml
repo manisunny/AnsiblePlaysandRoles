@@ -1,0 +1,12 @@
+---
+ - hosts: all
+   tasks:
+    - name: Ansible Jinja2 if elif
+      debug:
+        msg: >
+             --== Ansible Jinja2 if elif statement ==--
+             {% if ansible_distribution == "Ubuntu" -%}
+                This is ubuntu
+             {% elif ansible_distribution == "RedHat" -%}
+                This is RedHat
+             {% endif %}

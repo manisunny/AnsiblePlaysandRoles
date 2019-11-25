@@ -1,0 +1,11 @@
+---
+- hosts: all
+  tasks:
+    - name: install puppetclient on ubuntu
+      apt: name=puppet state=latest
+      become: yes
+      when: ansible_distribution == 'Ubuntu'
+    - name: install puppetclient on RedHat
+      yum: name=puppet state=latest
+      become: yes
+      when: ansible_distribution == 'RedHat'

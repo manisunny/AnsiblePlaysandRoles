@@ -1,0 +1,14 @@
+---
+- hosts: pslave1
+  tasks:
+    - name: install apache2 on slave1
+      apt: name=apache2 update_cache=yes state=latest
+      become: yes
+    - name: addding a website.
+      script: nano.sh
+      become: yes
+- hosts: sslave1
+  tasks:
+    - name: install njinx on slave2
+      apt: name=nginx state=latest
+      become: yes
