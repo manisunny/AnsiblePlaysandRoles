@@ -19,6 +19,3 @@
                             Name: Demo
                     wait: yes
                     assign_public_ip: yes
-          - ec2_instance_facts:
-                  filters:
-                          availability-zone: us-east-2c
