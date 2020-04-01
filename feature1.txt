@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+This is my feature1 file
+=======
+This is feature1
+>>>>>>> 28177c6ae2a2df5b3d35cdb0ad4752a6bf3573e0
