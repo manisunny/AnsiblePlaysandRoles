@@ -2,7 +2,7 @@
   hosts: localhost
   connection: local
   tasks:
-          - name: launching ec2
+          - name: launching ec2 using jenkins
             ec2:
                     key_name: NewKey
                     instance_type: t2.micro
