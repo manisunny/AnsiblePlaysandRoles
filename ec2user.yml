@@ -4,7 +4,7 @@
           - name: create ec2 user
             iam:
                     iam_type: user
-                    name: jenkinstest
+                    name: jenkinstestnew
                     state: present
                     password: Passw0rd
                     access_key_state: create
